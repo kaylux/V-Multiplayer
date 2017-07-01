@@ -1,0 +1,140 @@
+/* =========================================================
+		  V:Multiplayer - http://www.vmultiplayer.com
+
+-- File: VBlipInfo.h
+-- Project: Client
+-- Author(s): m0niSx
+-- Description: V Game BlipInfo handler header file
+=============================================================*/
+
+#ifndef VBLIPINFO_H
+#define VBLIPINFO_H
+
+#include <SharedUtility.h>
+
+// From IV:MP
+enum eBlipSprite
+{
+	BLIP_DESTINATION,
+	BLIP_DESTINATION_1,
+	BLIP_DESTINATION_2,
+	BLIP_OBJECTIVE,
+	BLIP_OBJECTIVE_4,
+	BLIP_OBJECTIVE_5,
+	BLIP_PLAYER,
+	BLIP_NORTH,
+	BLIP_WAYPOINT,
+	BLIP_PISTOL,
+	BLIP_SHOTGUN,
+	BLIP_SMG,
+	BLIP_RIFLE,
+	BLIP_ROCKET,
+	BLIP_GRENADE,
+	BLIP_MOLOTOV,
+	BLIP_SNIPER,
+	BLIP_BASEBALL_BAT,
+	BLIP_KNIFE,
+	BLIP_HEALTH,
+	BLIP_ARMOR,
+	BLIP_BURGER_SHOT,
+	BLIP_CLUCKIN_BELL,
+	BLIP_VLAD,
+	BLIP_INTERNET,
+	BLIP_MANNY,
+	BLIP_LITTLE_JACOB,	
+	BLIP_ROMAN,
+	BLIP_FAUSTIN,
+	BLIP_SAFEHOUSE,
+	BLIP_TAXI_RANK,
+	BLIP_BERNIE,
+	BLIP_BRUCIE,
+	BLIP_UNKNOWN_CONTACT,
+	BLIP_DWAYNE,
+	BLIP_ELIZABETA,
+	BLIP_GAMBETTI,
+	BLIP_JIMMY_PEGORINO,
+	BLIP_DERRICK,
+	BLIP_FRANCIS,
+	BLIP_GERRY,
+	BLIP_KATIE,
+	BLIP_PACKIE,	
+	BLIP_PHIL_BELL,
+	BLIP_PLAYBOY_X,
+	BLIP_RAY_BOCCINO,
+	BLIP_8_BALL,
+	BLIP_BAR,
+	BLIP_BOAT_TOUR,
+	BLIP_BOWLING,
+	BLIP_CLOTHES_SHOP,
+	BLIP_CLUB,
+	BLIP_DARTS,
+	BLIP_DWAYNE_RED,
+	BLIP_DATE,
+	BLIP_PLAYBOY_X_RED,
+	BLIP_HELITOUR,
+	BLIP_RESTAURANT,
+	BLIP_STATION,
+	BLIP_WEAPONS,
+	BLIP_POLICE_STATION,
+	BLIP_FIRE_STATION,
+	BLIP_HOSPITAL,
+	BLIP_MALE,
+	BLIP_FEMALE,
+	BLIP_FINISH_LINE,
+	BLIP_STRIP_CLUB,
+	BLIP_CONSOLE_GAME,
+	BLIP_COP_CAR,
+	BLIP_DIMITRI,
+	BLIP_COMEDY_CLUB,
+	BLIP_CABARET_CLUB,
+	BLIP_RANSOM,
+	BLIP_COP_CHOPPER,
+	BLIP_MICHELLE,
+	BLIP_PAY_N_SPRAY,
+	BLIP_ASSASSIN,
+	BLIP_REVENGE,	
+	BLIP_DEAL,
+	BLIP_GARAGE,
+	BLIP_LAWYER,
+	BLIP_TROPHY,
+	BLIP_MULTIPLAYER_TUTORIAL,
+	BLIP_STATION_3,
+	BLIP_STATION_8,
+	BLIP_STATION_A,
+	BLIP_STATION_B,
+	BLIP_STATION_C,
+	BLIP_STATION_E,
+	BLIP_STATION_J,
+	BLIP_STATION_K,
+	BLIP_CAR_WASH,
+	BLIP_UNITED_LIBERTY_PAPER,
+	BLIP_BOSS,
+	BLIP_BASE
+};
+
+#pragma pack(push, 1)
+class CVBlipInfo
+{
+	public:
+		PAD(pad0, 4);						// 0x0000 - 0x0004
+		WORD			wIndex;				// 0x0004 - 0x0006
+		PAD(pad1, 2);						// 0x0006 - 0x0008
+		bool			bCreatedFlag;		// 0x0008 - 0x0009
+		PAD(pad2, 27);						// 0x0009 - 0x0024
+		unsigned int	uiEntityIndex;		// 0x0024 - 0x0028
+		PAD(pad3, 8);						// 0x0028 - 0x0030
+		CVector3		vecPosition;		// 0x0030 - 0x003C
+		PAD(pad4, 4);						// 0x003C - 0x0040
+		float			fScale1;			// 0x0040 - 0x0044 (seems to be scale value with 0x50)
+		PAD(pad5, 4);						// 0x0044 - 0x0048
+		int				iType;				// 0x0048 - 0x004C
+		int				iDisplay;			// 0x004C - 0x0050
+		float			fScale;				// 0x0050 - 0x0054
+		DWORD			dwColor;			// 0x0054 - 0x0058
+		int				iAlpha;				// 0x0058 - 0x005C
+		eBlipSprite		sprite;				// 0x005C - 0x0060
+		PAD(pad6, 64);						// 0x0060 - 0x00A0
+};
+#pragma pack(pop)
+
+#endif
